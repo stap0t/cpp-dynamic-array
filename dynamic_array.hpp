@@ -289,7 +289,7 @@ public:
 	{
 		if (_head == nullptr)
 		{
-			__exit_val _result = _allocate_(4);
+			__exit_val _result = _allocate_(4UI64);
 
 			if (_result != 0)
 			{
@@ -309,7 +309,7 @@ public:
 
 		else
 		{
-			__exit_val _result = _reallocate_((2 * static_cast<__size>(_tail - _head)));
+			__exit_val _result = _reallocate_((2UI64 * static_cast<__size>(_tail - _head)));
 
 			if (_result == -1)
 			{
@@ -336,7 +336,7 @@ public:
 	{
 		if (_head == nullptr)
 		{
-			__exit_val _result = _allocate_(4);
+			__exit_val _result = _allocate_(4UI64);
 
 			if (_result != 0)
 			{
@@ -356,7 +356,7 @@ public:
 
 		else
 		{
-			__exit_val _result = _reallocate_((2 * static_cast<__size>(_tail - _head)));
+			__exit_val _result = _reallocate_((2UI64 * static_cast<__size>(_tail - _head)));
 
 			if (_result == -1)
 			{
