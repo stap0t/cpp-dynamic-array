@@ -13,24 +13,24 @@ template <typename array_type>
 class dynamic_array
 {
 private:
-	using __value = array_type;
-	using __address = array_type*;
+	using __value      = array_type;
+	using __address    = array_type*;
 	using __lvalue_ref = array_type&;
 	using __rvalue_ref = array_type&&;
 
-	using __exit_val = signed int;
+	using __exit_val   = signed int;
 
 public:
-	using value_type = __value;
-	using pointer = __address;
+	using value_type      = __value;
+	using pointer 	      = __address;
 	using const_reference = const __lvalue_ref;
-	using reference = __lvalue_ref;
+	using reference       = __lvalue_ref;
 
 	using iterator = __address;
 
 private:
-	__address _head = nullptr;
-	__address _tail = nullptr;
+	__address _head     = nullptr;
+	__address _tail     = nullptr;
 	__address _inserter = nullptr;
 
 public:
@@ -153,7 +153,7 @@ private:
 		if (_head == nullptr)
 			return -1;
 
-		_tail = _head + _new_capacity;
+		_tail     = _head + _new_capacity;
 		_inserter = _head;
 
 		return 0;
@@ -166,7 +166,7 @@ private:
 		if (_new_head == nullptr)
 			return -1;
 
-		__address _temp_tail = _new_head + _new_capacity;
+		__address _temp_tail     = _new_head + _new_capacity;
 		__address _temp_inserter = _new_head;
 
 		if ((static_cast<__size>(_tail - _head) > _new_capacity) && (static_cast<__size>(_inserter - _head) >= _new_capacity))
@@ -185,7 +185,7 @@ private:
 				--_inserter;
 			}
 
-			_tail = _temp_tail;
+			_tail     = _temp_tail;
 			_inserter = _temp_inserter;
 		}
 
@@ -198,7 +198,7 @@ private:
 				(_head + i)->~__value();
 			}
 
-			_tail = _temp_tail;
+			_tail     = _temp_tail;
 			_inserter = _temp_inserter;
 		}
 
