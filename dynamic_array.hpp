@@ -26,7 +26,7 @@ public:
 	using const_reference = const __lvalue_ref;
 	using reference       = __lvalue_ref;
 
-	using iterator = __address;
+	using iterator        = __address;
 
 private:
 	__address _head     = nullptr;
